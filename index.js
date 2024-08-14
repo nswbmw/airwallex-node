@@ -17,18 +17,26 @@ function Airwallex (options = {}) {
 
   const proxy = options.proxy
   if (proxy) {
-    if (!['http', 'socks'].includes(proxy.protocol)) {
-      throw new Error('proxy.protocol must be one of ["http", "socks"]')
+    if (typeof proxy === 'string') {
+      if (proxy.startsWith('http://')) {
+        this.agent = new HttpsProxyAgent(proxy)
+      } else if (proxy.startsWith('socks://')) {
+        this.agent = new SocksProxyAgent(proxy)
+      }
+    } else if (typeof proxy === 'object') {
+      if (!['http', 'socks'].includes(proxy.protocol)) {
+        throw new Error('proxy.protocol must be one of ["http", "socks"]')
+      }
+      this.agent = (proxy.protocol === 'http')
+        ? new HttpsProxyAgent((proxy.username && proxy.password)
+          ? `http://${proxy.username}:${proxy.password}@${proxy.host}:${proxy.port}`
+          : `http://${proxy.host}:${proxy.port}`
+        )
+        : new SocksProxyAgent((proxy.username && proxy.password)
+          ? `socks://${proxy.username}:${proxy.password}@${proxy.host}:${proxy.port}`
+          : `socks://${proxy.host}:${proxy.port}`
+        )
     }
-    this.agent = (proxy.protocol === 'http')
-      ? new HttpsProxyAgent((proxy.username && proxy.password)
-        ? `http://${proxy.username}:${proxy.password}@${proxy.host}:${proxy.port}`
-        : `http://${proxy.host}:${proxy.port}`
-      )
-      : new SocksProxyAgent((proxy.username && proxy.password)
-        ? `socks://${proxy.username}:${proxy.password}@${proxy.host}:${proxy.port}`
-        : `socks://${proxy.host}:${proxy.port}`
-      )
   }
 
   return this
