@@ -1,6 +1,6 @@
 ## airwallex
 
-Airwallex Nodejs SDK
+Airwallex Nodejs SDK.
 
 ### Install
 
@@ -8,10 +8,11 @@ Airwallex Nodejs SDK
 $ npm i airwallex --save
 ```
 
-### Usage
+### Example
 
 ```js
-const Airwallex = require('airwallex')
+import Airwallex from 'airwallex'
+
 const airwallexClient = new Airwallex({
   clientId: 'xxx', // CLIENT ID
   clientSecret: 'xxx', // API KEY
@@ -20,7 +21,7 @@ const airwallexClient = new Airwallex({
 
 ;(async () => {
   const balanceRes = await airwallexClient.execute({
-    method: 'get',
+    method: 'GET',
     url: '/api/v1/balances/current'
   })
   /*
@@ -38,7 +39,7 @@ const airwallexClient = new Airwallex({
   console.log(balanceRes)
 
   const createPaymentIntentRes = await airwallexClient.execute({
-    method: 'post',
+    method: 'POST',
     url: '/api/v1/pa/payment_intents/create',
     body: {
       amount: 0.99,

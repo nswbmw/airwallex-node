@@ -1,16 +1,36 @@
 {
   "name": "airwallex",
-  "version": "1.1.0",
-  "description": "Airwallex Nodejs SDK",
-  "main": "index.js",
+  "description": "Airwallex Node SDK.",
+  "version": "2.0.0",
+  "type": "module",
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.cjs",
+      "default": "./dist/esm/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "types",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build": "tsup",
+    "prepublishOnly": "npm run lint && npm run build",
+    "prepare": "husky"
   },
   "author": "nswbmw",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nswbmw/airwallex-node"
+    "url": "git+https://github.com/nswbmw/airwallex-node.git"
   },
   "keywords": [
     "airwallex",
@@ -18,17 +38,17 @@
     "云汇"
   ],
   "devDependencies": {
-    "eslint": "8.47.0",
-    "eslint-config-standard": "17.1.0",
-    "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-promise": "6.1.1",
-    "eslint-plugin-standard": "4.1.0"
+    "@commitlint/cli": "20.1.0",
+    "@commitlint/config-conventional": "20.0.0",
+    "eslint": "9.39.1",
+    "husky": "9.1.7",
+    "neostandard": "0.12.2",
+    "tsup": "8.5.1"
   },
   "dependencies": {
-    "https-proxy-agent": "5.0.1",
+    "https-proxy-agent": "7.0.6",
+    "lite-request": "1.0.1",
     "memory-cache": "0.2.0",
-    "request": "2.88.2",
-    "request-promise": "4.2.6",
-    "socks-proxy-agent": "7.0.0"
+    "socks-proxy-agent": "8.0.5"
   }
 }
