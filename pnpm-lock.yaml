@@ -12,8 +12,8 @@ importers:
         specifier: 7.0.6
         version: 7.0.6
       lite-request:
-        specifier: 1.0.1
-        version: 1.0.1
+        specifier: 1.0.2
+        version: 1.0.2
       memory-cache:
         specifier: 0.2.0
         version: 0.2.0
@@ -1492,8 +1492,8 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  lite-request@1.0.1:
-    resolution: {integrity: sha512-4kUemExb52k1+4hb40MN/dJi3p1WUdCH1MSW3Uof9caRgqE9MVxKKtcziJaOQy+i6flgxqbum5Qsy/9EfVv6OA==}
+  lite-request@1.0.2:
+    resolution: {integrity: sha512-jDr4N+obmT5pwg6jlfVW6jXSuOxYbhuNjsIA+ubFNDZLDOIOIjafncX+9pWf9kViN5sfMvVEnsutdwXjm+H72Q==}
 
   load-tsconfig@0.2.5:
     resolution: {integrity: sha512-IXO6OCs9yg8tMKzfPZ1YmheJbZCiEsnBdcB03l0OcfK9prKnJb96siuHCr5Fl37/yo9DnKU+TLpxzTUspw9shg==}
@@ -3673,7 +3673,7 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
-  lite-request@1.0.1: {}
+  lite-request@1.0.2: {}
 
   load-tsconfig@0.2.5: {}
 
