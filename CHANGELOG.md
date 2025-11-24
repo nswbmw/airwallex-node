@@ -1,3 +1,7 @@
+## v2.0.2 / 2025-11-24
+
+- fix: types
+
 ## v2.0.1 / 2025-11-24
 
 - fix: exports types in package.json

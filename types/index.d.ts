@@ -22,11 +22,11 @@ export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE' | 'HEAD'
 export interface ExecuteOptions {
   method?: HttpMethod
   url: string
-  headers?: Record<string, string>
+  headers?: Record<string, string | number | boolean>
   body?: any
 }
 
 export default class Airwallex {
   constructor (options?: AirwallexOptions)
-  execute (options: ExecuteOptions): Promise<any>
+  execute<T = any> (options: ExecuteOptions): Promise<T>
 }
