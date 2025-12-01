@@ -1,3 +1,7 @@
+## v2.1.0 / 2025-12-01
+
+- feat: export worker.js
+
 ## v2.0.2 / 2025-11-24
 
 - fix: types

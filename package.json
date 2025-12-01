@@ -1,7 +1,7 @@
 {
   "name": "airwallex",
   "description": "Airwallex Node SDK.",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "type": "module",
   "main": "dist/cjs/index.cjs",
   "module": "dist/esm/index.js",
@@ -12,6 +12,12 @@
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.cjs",
       "default": "./dist/esm/index.js"
+    },
+    "./worker": {
+      "types": "./types/worker.d.ts",
+      "import": "./dist/esm/worker.js",
+      "require": "./dist/cjs/worker.cjs",
+      "default": "./dist/esm/worker.js"
     }
   },
   "files": [

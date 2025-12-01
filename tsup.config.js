@@ -3,7 +3,7 @@ import { defineConfig } from 'tsup'
 export default defineConfig([
   // ESM build
   {
-    entry: ['index.js'],
+    entry: ['src/**'],
     format: 'esm',
     dts: false,
     splitting: false,
@@ -20,7 +20,7 @@ export default defineConfig([
   },
   // CJS build
   {
-    entry: ['index.js'],
+    entry: ['src/**'],
     format: 'cjs',
     dts: false,
     splitting: false,

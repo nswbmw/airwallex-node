@@ -86,7 +86,7 @@ class Airwallex {
     }, headers)
     const res = await request({
       url: this._getURL(url),
-      method: method.toUpperCase(),
+      method,
       headers: requestHeaders,
       agent: this.agent,
       json: true,
